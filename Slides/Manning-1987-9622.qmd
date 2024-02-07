@@ -46,7 +46,7 @@ format:
 - Methodology: The authors use data from a randomized experiment, the Rand Health Insurance Experiment (HIE, 1974-1977), and a 
   - Four-Equation Model to exploit the characteristics of the distribution of medical expenditure
 
-## Main Findings:
+## Main Findings
 
 - A catastrophic insurance plan reduces medical services expenditures by 31% relative to zero out-of-pocket price
 - Price elasticity is approximately -0.2
@@ -94,7 +94,7 @@ format:
 | 95 Percent            | 280    | 253     | 113       | 162            | 146        | 166        | 1120                      | 3727                                  |
 | Individual Deductible | 105    | 285     | 188       | 220            | 196        | 282        | 1276                      | 4175                                  |
 | Total                 | 1137   | 1222    | 723       | 889            | 778        | 1060       | 5809                      | 20190                                 |
-: NUMBER OF PERSONS AT ENROLLMENT AND NUMBER OF PERSON-YEARS IN ESTIMATION SAMPLE {.responsive .sm}
+: NUMBER OF PERSONS AT ENROLLMENT AND NUMBER OF PERSON-YEARS IN ESTIMATION SAMPLE {}
 
 
 ## Empirical Approach
@@ -129,6 +129,7 @@ $$
 - $\hat{\phi}_3, \hat{\phi}_4$: "smearing" retransformation of the error terms
 
 [
+  [$\blacktriangleright$ Semearing Retransformation](#sec-smearing)
   [$\blacktriangleright$ Error Term Correction](#sec-error)
   [$\blacktriangleright$ Selection Models](#sec-selection-models)
 ]{.footer}
@@ -322,7 +323,7 @@ VARIOUS MEASURES OF PREDICTED MEAN ANNUAL USE OF MEDICAL SERVICES, BY PLAN
 
 :::
 
-## Results (Four-Eq. Model)
+## Results (Four-Eq. Model) {#sec-results}
 
 - Mean predicted expenditure is 46% higher in the free care than in the 95% plan
 
@@ -332,6 +333,12 @@ VARIOUS MEASURES OF PREDICTED MEAN ANNUAL USE OF MEDICAL SERVICES, BY PLAN
   - Same as in simple means, adding covariates does not change estimated probabilities of medical service use
 
 - Outpatient-only cost sharing (individual deductible plan) reduces total expenditures relative to free care by reducing the likelihood of any use
+
+[
+  [$\blacktriangleright$ Subgroups](#sec-subgroups)
+  [$\blacktriangleright$ Other Subgroups](#sec-other-subgroups)
+  [$\blacktriangleright$ Other Results](#sec-other-results)
+]{.footer}
 
 ## Literature Estimates of Demand
 
@@ -392,14 +399,33 @@ Three different methods to estimate price elasticity comparable to the literatur
   [$\blacktriangleright$ Back](#sec-expected-medical-expense)
 ]{.footer}
 
-## Nonparametric Correction in the Error Terms {#sec-error}
+## Smearing Retransformation {#sec-smearing}
+
+Can't use normal theory restransformation from logs to dollars $(\exp(\sigma^2/2))$ because the error distributions of the OLS log regressions deviate from the normal assumption.
+
+Nonparametric estimate of the retransformation of factors (Duan, 1983),
+
+$$
+\hat{\phi_j}=\Sigma_i \exp(\hat{\varepsilon_{ij}})/n_j, \; j=3,4,
+$$
+
+where $n_j$ is sample size of equation $j$, $\hat{\varepsilon}_{ij}=\ln(y_{ij})-x_{ij}\hat{\beta}_j$, and $\hat{\beta_j}$ is the OLS estimate, $i$ indexes the person.
+
+[
+  [$\blacktriangleright$ Back](#sec-expected-medical-expense)
+]{.footer}
+
+## Nonparametric Correction in the Error Terms {#sec-error .nonincremental}
 
 - Results show a mean value for each plan
   - [mean within plans over predicted values obtained by alternatively placing participants on each plan]{.small}
 - Clustered Standard Errors by family and over time
 
+[
+  [$\blacktriangleright$ Back](#sec-expected-medical-expense)
+]{.footer}
 
-## Comparison with Selection Models {#sec-selection-models}
+## Comparison with Selection Models {#sec-selection-models .smaller .nonincremental}
 
 - **Types:**
   1. Tobit model.
@@ -415,7 +441,7 @@ Three different methods to estimate price elasticity comparable to the literatur
   [$\blacktriangleright$ Back](#sec-expected-medical-expense)
 ]{.footer}
 
-## Use by Subgroups {.smaller .nonincremental}
+## Use by Subgroups {#sec-subgroups .smaller .nonincremental}
 
 - Income: 
   - The probability of any use of medical services increases with income within each plan, but these estimates are influenced by the income-related upper limit in out-of-pocket expenses
@@ -425,21 +451,43 @@ Three different methods to estimate price elasticity comparable to the literatur
   - Similar outpatient response to insurance plans for children (age &le; 18) and adults.
   - Children less plan-responsive for inpatient care.
 
-## Other Subgroups {.smaller .nonincremental}
+::: {.footer}
 
-*Health Status*: No differential response to health insurance coverage observed between healthy and sickly individuals.
-Lack of interaction between plan and health status suggests sickly individuals exhibit more discretion at the margin.
+[$\blacktriangleright$ Back](#sec-results)
 
-*Sites*: No differences in response to insurance coverage among sites.
+:::
 
-*Period of Enrollment*: Duration of enrollment does not significantly impact spending or plan responsiveness.
+## Other Subgroups {#sec-other-subgroups .smaller .nonincremental}
 
-## Other Results {.smaller .nonincremental}
+- *Health Status*: 
+  - No differential response to health insurance coverage observed between healthy and sickly individuals.
+  - Lack of interaction between plan and health status suggests sickly individuals exhibit more discretion at the margin.
 
-*Dental Results*: Dental services show greater responsiveness to plan in the first year.
-Similar magnitude of responsiveness as other medical services in subsequent years.
+- *Sites*: 
+  - No differences in response to insurance coverage among sites.
 
-*Health Maintenance Organization (HMO) Results*: A randomized group of participants was assigned into an HMO, the Group Health Cooperative of Puget Soung in Seattle. The HMO Experimentals. This group was given a plan of benefits identical to the free-for-service (FFS) plan. 
-No evidence of selection observed in the HMO studied.
-HMO Experimentals exhibit lower inpatient use and lower expenditures compared to free fee-for-service plan.
-Health status outcomes comparable between HMO and free fee-for-service plan.
+- *Period of Enrollment*: 
+  - Duration of enrollment does not significantly impact spending or plan responsiveness.
+
+::: {.footer}
+
+[$\blacktriangleright$ Back](#sec-results)
+
+:::
+
+## Other Results {#sec-other-results .smaller incremental="false"}
+
+- *Dental Results*: 
+  - Dental services show greater responsiveness to plan in the first year.
+  - Similar magnitude of responsiveness as other medical services in subsequent years.
+
+- *Health Maintenance Organization (HMO) Results*: A randomized group of participants was assigned into an HMO, the Group Health Cooperative of Puget Soung in Seattle. The HMO Experimentals. This group was given a plan of benefits identical to the free-for-service (FFS) plan. 
+  - No evidence of selection observed in the HMO studied.
+  - HMO Experimentals exhibit lower inpatient use and lower expenditures compared to free fee-for-service plan.
+  - Health status outcomes comparable between HMO and free fee-for-service plan.
+
+::: {.footer}
+
+[$\blacktriangleright$ Back](#sec-results)
+
+:::
