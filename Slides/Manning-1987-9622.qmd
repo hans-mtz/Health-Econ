@@ -252,6 +252,8 @@ SAMPLE MEANS FOR ANNUAL USE OF MEDICAL SERVICES PER CAPITA
 - Outpatient expenses on the free plan are 67% higher than the 95% plan, outpatient visit rates are 66% higher.
   - Cost sharing affects the number of medical contacts, rather than the intensity.
 
+## Results (Simple Means)
+
 - Largest significant drop in outpatient between the free plan and 25% percent plan
 
 - Inpatient services use does not change significantly between the 25, 50, and 95% plans
