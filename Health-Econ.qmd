@@ -1,0 +1,15 @@
+## Health Econ
+
+- Conley et al. (2023) Social Interactions, Mechanisms, and Equilibrium: Evidence from a Model of Study Time and Academic Achievement, JPE
+
+- Grossman (1972) On the Concept of Health Capital and the Demand for Health, JPE
+- Gayle and Miller (2015) Identifying and Testing Models of Managerial Compensation, REStud
+- Abito (2020) Measuring the Welfare Gains from Optimal Incentive Regulation. REStud
+- Lazear (2000) Performance Pay and Productivity, AER
+- Manning et al. (1987) Health Insurance and the Demand for Medical Care: Evidence from a Randomized Experiment, AER
+- Ferral and Shearer (1999) Incentives and Transaction Costs within the Firm: Estimating an Agency Model using Payroll Records, REStud
+- Einav et al. (2010) Estimating Welfare in Insurance Markets using Variation in Prices, QJE
+- Bajari et al. (2014) Moral Hazard, Adverse Selection, and Health Expenditures: A Semiparametric Analysis, RAND
+- Einav et al. (2013) Selection on Moral Hazard in Health Insurance, AER
+- Vera-Hernandez (2003) Structural Estimation of a Principal-Agent Model: Moral Hazard in Medical Insurance, RAND
+- Perrigne and Vuong (2011) Nonparametric Identification of a Contract Model with Adverse Selection and Moral Hazard, ECTA

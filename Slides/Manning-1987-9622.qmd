@@ -1,0 +1,445 @@
+---
+title: "Health Insurance and the Demand for Medical Care"
+subtitle: "Evidence from a Randomized Experiment"
+author: "Manning, Newhouse, Duan, Keeler & Leibowitz"
+institute: ""
+date: last-modified
+date-format: long
+format:
+  revealjs: 
+    slide-number: true
+    # chalkboard: 
+    #   buttons: false
+    preview-links: true
+    incremental: true
+    theme: [simple, theme.scss ]
+    width: 1260
+    height: 700
+    embed-resources: true
+    navigation-mode: linear
+    # revealjs-plugins:
+    #   - fullscreen
+    # include-in-header: packages.tex
+    # css: [style.css, xaringan-themer.css]
+    # logo: images/quarto.png
+    # footer: <https://quarto.org>
+# resources:
+#   - Paper/WP-LCFI.pdf
+# bibliography: biblio/lcfi.bib
+
+---
+## Introduction
+
+- How does health insurance affect the demand for medical services?
+
+- Is health insurance to blame for the rapid increase in medical care **costs** (4% per year) and the rise in the **share of GNP** devoted to medical care (4.4% in 1950 to 10.7% in 1985)
+  - spread of **health insurance** $\implies$ increase in demand $\implies$ increase in **price and quantity** demanded of medical services
+
+- Main issue: Insurance is **endogenous**. 
+  - [Those who expect to demand more medical services have incentives to get more complete insurance]{.small}
+
+## Introduction
+
+- Contribution: Literature disagreed on the magnitude of the demand response to changes in insurance, price elasticity of demand (or **coinsurance elasticity of demand**)
+  - Elasticity estimates varied from -0.1 to -2.1 at the mean
+
+- Methodology: The authors use data from a randomized experiment, the Rand Health Insurance Experiment (HIE, 1974-1977), and a 
+  - Four-Equation Model to exploit the characteristics of the distribution of medical expenditure
+
+## Main Findings:
+
+- A catastrophic insurance plan reduces medical services expenditures by 31% relative to zero out-of-pocket price
+- Price elasticity is approximately -0.2
+- Reject the hypothesis that less favorable coverage of outpatient services increases total expenditure [(e.g. by decreasing preventing care or inducing hospitalization)]{.small}
+
+## Data {#sec-data}
+
+- The US Federal Government conducted the Rand Health Insurance Experiment (HIE) from 1974 to 1977
+- Enrolled families in six sites selected to reflect varied demographics and medical system complexities
+- Assigned families to different insurance plans with varying cost-sharing structures
+- Utilized the Finite Selection Model to achieve balance across plans while retaining randomization
+- Unit of analysis: Person-year, with control variables for demographics, economics, and health factors
+
+[
+  [$\blacktriangleright$ Demographics and Medical System Complexities](#sec-app-1)
+]{.footer}
+
+## Insurance Plan Variability
+
+- The 14 insurance plans varied in two dimensions of cost sharing: 
+    
+    1. coinsurance rates[^coinsurance] (Free plan, 25%, 50%, and 95%) and 
+    1. annual out-of-pocket limits (Maximum Dollar Expenditure MDE of 5%, 10%, or 15% of family income, up to \$1,000)
+
+- Covered expenses included nearly all medical services [(excluded services included non-preventive orthodontia and cosmetic surgery)]{.small}
+- Individual deductible: free inpatient care, 95% coinsurance rate for outpatient services, and $150 expense limit per person ($450 per family)
+
+[^coinsurance]: Percentage paid out-of-pocket.
+
+## Sample
+
+- Random sample of each site's nonaged population
+- Dependant variable: Medical services [(other than outpatient psychotherapy and dental services)]{.small}
+- Independent variables:
+    - Five insurance plan categories: Free plan, 25%, 50%, and 95% coinsurance rate plans, plus the individual deductible plan
+    - Controls: age, sex, race, family income, health status, family size, and site
+
+## {.smaller}
+
+| Insurance Plan        | Dayton | Seattle | Fitchburg | Franklin County | Charleston | Georgetown | Enrollment Total (Persons) | Estimation Sample Total (Person-Years) |
+|:----------------------|:------:|:-------:|:---------:|:--------------:|:----------:|:----------:|:---------------------------:|:---------------------------------------:|
+| Free                  | 301    | 431     | 241       | 297            | 264        | 359        | 1893                      | 6822                                  |
+| 25 Percent            | 260    | 253     | 125       | 152            | 146        | 201        | 1137                      | 4065                                  |
+| 50 Percent            | 191    | 0       | 56        | 58             | 26         | 52         | 383                       | 1401                                  |
+| 95 Percent            | 280    | 253     | 113       | 162            | 146        | 166        | 1120                      | 3727                                  |
+| Individual Deductible | 105    | 285     | 188       | 220            | 196        | 282        | 1276                      | 4175                                  |
+| Total                 | 1137   | 1222    | 723       | 889            | 778        | 1060       | 5809                      | 20190                                 |
+: NUMBER OF PERSONS AT ENROLLMENT AND NUMBER OF PERSON-YEARS IN ESTIMATION SAMPLE {.responsive .sm}
+
+
+## Empirical Approach
+
+- Main approach: four-equation model [(Duan et al., 1983)]{.small}
+  - vs. simple means (ANOVA)
+- The four-equation model exploits three characteristics of the medical expenses distribution: 
+  1. large proportion of **nonusers** during the year, 
+  1. among users, the distribution is **highly skewed**, 
+  1. **different** distributions for **inpatient and outpatient** users
+- ANOVA estimates, imprecise but consistent; Four-Eq Model, consistent with lower mean square error
+
+## Four-Equation Model
+
+- Participants grouped into: 1) nonusers, 2) outpatient-only users, and 3) any inpatient service users
+
+1. Probit for probability of using any medical service [(nonusers)]{.small}
+2. Probit for conditional probability of inpatient stay, given participant is user [(inpatient vs. outpatient)]{.small}
+3. OLS log of total annual medical expenses for outpatient-only users and
+4. OLS log of annual medical expenses for any inpatient service users [(skewness)]{.small}
+
+## Expected Medical Expense {#sec-expected-medical-expense}
+
+$$
+E(\text{Medical Expense}_i) = \hat{p}_i \left[ (1 - \hat{\pi})\exp(x_i\hat{\beta}_3)\hat{\phi}_3 + \hat{\pi}\exp(x_i\hat{\beta}_4)\hat{\phi}_4 \right]
+$$
+
+- $\hat{p}_i$: probability of any medical use
+- $\hat{\pi}_i$: conditional probability for a medical user to have any inpatient use
+- $\exp(x_i\hat{\beta}_3)\hat{\phi}_3$: conditional expense for medical services if outpatient only
+- $\exp(x_i\hat{\beta}_4)\hat{\phi}_4$: conditional expense for medical services if any inpatient
+- $\hat{\phi}_3, \hat{\phi}_4$: "smearing" retransformation of the error terms
+
+[
+  [$\blacktriangleright$ Error Term Correction](#sec-error)
+  [$\blacktriangleright$ Selection Models](#sec-selection-models)
+]{.footer}
+
+## {.smaller}
+
+::: {#tbl-resulst html-table-processing="none"}
+
+```{=html}
+<table>
+  <thead>
+    <tr>
+      <th>Plan</th>
+      <th>Face-to-Face Visits</th>
+      <th>Outpatient Expenses (1984 $)</th>
+      <th>Admissions</th>
+      <th>Inpatient Dollars (1984 $)</th>
+      <th>Prob. Any Medical (%)</th>
+      <th>Prob. Any Inpatient (%)</th>
+      <th>Total Expenses (1984 $)</th>
+      <th>Adjusted Total Expenses (1984 $)<sup>a</sup></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Free</td>
+      <td>4.55<br/>(.168)</td>
+      <td>340<br/>(10.9)</td>
+      <td>.128<br/>(.0070)</td>
+      <td>409<br/>(32.0)</td>
+      <td>86.8<br/>(.817)</td>
+      <td>10.3<br/>(.45)</td>
+      <td>749<br/>(39)</td>
+      <td>750<br/>(39)</td>
+    </tr>
+    <tr>
+      <td>25%</td>
+      <td>3.33<br/>(.190)</td>
+      <td>260<br/>(14.70)</td>
+      <td>.105<br/>(.0090)</td>
+      <td>373<br/>(43.1)</td>
+      <td>78.8<br/>(1.38)</td>
+      <td>8.4<br/>(0.61)</td>
+      <td>634<br/>(53)</td>
+      <td>617<br/>(49)</td>
+    </tr>
+    <tr>
+      <td>50%</td>
+      <td>3.03<br/>(.221)</td>
+      <td>224<br/>(16.8)</td>
+      <td>.092<br/>(.0116)</td>
+      <td>450<br/>(139)</td>
+      <td>77.2<br/>(2.26)</td>
+      <td>7.2<br/>(0.77)</td>
+      <td>674<br/>(144)</td>
+      <td>573<br/>(100)</td>
+    </tr>
+    <tr>
+      <td>95%</td>
+      <td>2.73<br/>(.177)</td>
+      <td>203<br/>(12.0)</td>
+      <td>.099<br/>(.0078)</td>
+      <td>315<br/>(36.7)</td>
+      <td>67.7<br/>(1.76)</td>
+      <td>7.9<br/>(0.55)</td>
+      <td>518<br/>(44.8)</td>
+      <td>540<br/>(47)</td>
+    </tr>
+    <tr>
+      <td>Ind. Deductible</td>
+      <td>3.02<br/>(.171)</td>
+      <td>235<br/>(11.9)</td>
+      <td>.115<br/>(.0076)</td>
+      <td>373<br/>(41.5)</td>
+      <td>72.3<br/>(1.54)</td>
+      <td>9.6<br/>(0.55)</td>
+      <td>608<br/>(46)</td>
+      <td>630<br/>(56)</td>
+    </tr>
+    <tr></tr>
+    <!-- Repeat similar rows for other plans -->
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>&chi;<sup>2</sup>(4)<sup>b</sup></td> 
+      <td>68.8</td> 
+      <td>85.3</td> 
+      <td>11.7</td> 
+      <td>4.1</td> 
+      <td>144.7</td> 
+      <td>19.5</td> 
+      <td>15.9</td> 
+      <td>17.0</td>
+    </tr>
+    <tr>
+      <td>p-value &chi;<sup>2</sup></td>
+      <td>&lt;.0001</td>
+      <td>&lt;.0001</td> 
+      <td>.02</td> 
+      <td>n.s.</td> 
+      <td>&lt;.0001</td> 
+      <td>.0006</td> 
+      <td>.003</td> 
+      <td>.002</td>
+    </tr>
+  </tfoot>
+</table>
+
+```
+
+SAMPLE MEANS FOR ANNUAL USE OF MEDICAL SERVICES PER CAPITA
+
+:::
+
+## Results (Simple Means)
+
+- Per capita expenses on the free plan (no out-of-pocket costs) are 45% higher than the 95% coinsurance rate. 
+  - The higher the cost share, the lower the per capita expenses.
+
+- Outpatient expenses on the free plan are 67% higher than the 95% plan, outpatient visit rates are 66% higher.
+  - Cost sharing affects the number of medical contacts, rather than the intensity.
+
+- Largest significant drop in outpatient between the free plan and 25% percent plan
+
+- Inpatient services use does not change significantly between the 25, 50, and 95% plans
+
+## Results (Simple Means)
+
+Individual plan (free inpatient care, 95% outpatient coinsurance, \$150 Max per person) participants behave differently
+
+- Expenditure is significantly lower than free plan;  
+  - the overall response is: one-third reduction in outpatient expenses
+  - less than one-tenth reduction in inpatient expenses
+- Inpatient service usage lies between the free plan and coinsurance plans, suggesting non-trivial cross-price elasticity between inpatient and outpatient services
+
+## {.smaller}
+
+::: {#tbl-4eq-model-results}
+
+```{=html}
+<table>
+  <tr>
+    <th>Plan</th>
+    <th>Likelihood of Any Use <br/>(%)</th>
+    <th>One or More Admissions <br/>(%)</th>
+    <th>Medical Expenses <br/>(1984 $)</th>
+  </tr>
+  <tr>
+    <td>Free</td>
+    <td>86.7<br />(0.67)</td>
+    <td>10.37<br />(0.420)</td>
+    <td>777<br />(32.8)</td>
+  </tr>
+  <tr>
+    <td>Family Pay</td>
+    <td colspan="3"></td> <!-- Empty cell to span all columns -->
+  </tr>
+  <tr>
+    <td>25 Percent</td>
+    <td>78.8<br />(0.99)</td>
+    <td>8.83<br />(0.379)</td>
+    <td>630<br />(29.0)</td>
+  </tr>
+  <tr>
+    <td>50 Percent</td>
+    <td>74.3<br />(1.86)</td>
+    <td>8.31<br />(0.400)</td>
+    <td>583<br />(32.6)</td>
+  </tr>
+  <tr>
+    <td>95 Percent</td>
+    <td>68.0<br />(1.48)</td>
+    <td>7.75<br />(0.354)</td>
+    <td>534<br />(27.4)</td>
+  </tr>
+  <tr>
+    <td>Individual Deductible</td>
+    <td>72.6<br />(1.14)</td>
+    <td>9.52<br />(0.529)</td>
+    <td>623<br />(34.6)</td>
+  </tr>
+  <tr>
+    <td colspan="4" style="text-align:center;">Note: Standard errors are shown in parentheses.</td>
+  </tr>
+</table>
+
+
+```
+
+VARIOUS MEASURES OF PREDICTED MEAN ANNUAL USE OF MEDICAL SERVICES, BY PLAN
+
+:::
+
+## Results (Four-Eq. Model)
+
+- Mean predicted expenditure is 46% higher in the free care than in the 95% plan
+
+- Largest response to plan occurs between free care and 25% plan
+
+- 87% of participants in the free plan are predicted to use any medical services during the year, while only 68% of participants in the 95% plan are
+  - Same as in simple means, adding covariates does not change estimated probabilities of medical service use
+
+- Outpatient-only cost sharing (individual deductible plan) reduces total expenditures relative to free care by reducing the likelihood of any use
+
+## Literature Estimates of Demand
+
+Three different methods to estimate price elasticity comparable to the literature:
+
+1. Episodes. Changes in demand for episodes of treatment when individuals are more than \$400 from their limit
+
+1. Indirect utility function and applying it to total expenditure
+
+1. Average coinsurance rates
+
+- The three methods suggest price elasticities for a constant coinsurance rate between -0.1 to -0.2. Values are similar to the lower range of the nonexperimental literature.
+
+## Discussion
+
+- Does health insurance explain the sustained rise in medical expenditure? 
+  - Demand response estimates can only account for about a tenth of the factor of 7 change in health expenditure in the post-World War II period (1950-1984).
+  - Changes in income can neither account for the increase
+  - Technological change? host of new medical products, like dialysis or kidney transplantation
+
+- Welfare loss from moving from a universal 95 percent plan to the free care plan is \$37 to \$60 billion; expenditure on medical services in 1984 by under 65 population was \$200 billion
+
+## Discussion
+
+- Traditionally inpatient services coverage is more generous relative to outpatient services coverage
+
+- Lack of insurance for outpatient services might deter individuals from seeking care (reducing medical services expenditure) when their illness can be treated relatively cheaply
+
+- More generous coverage for inpatient services might lead physicians to hospitalize patients who could be treated on an outpatient basis increasing social expenditure
+
+- Are outpatient and inpatient services substitutes or complements?
+
+## Discussion
+
+- The authors reject the hypothesis that increased coverage of outpatient services, holding constant the coverage of inpatient services, will reduce expenditure [(more coverage, less expenditure)]{.small}
+
+- Mean expenditure on individual plan (free inpatient, costly outpatient) is 20 percent less than the mean on the free care plan (free inpatient, free outpatient) [(less coverage, less expenditure)]{.small}
+
+- Moreover, outpatient deductible (less coverage) also decreases hospital admissions (inpatient care), suggesting inpatient and outpatient services are complements
+
+# Appendix
+
+## Selection of Six Cities {#sec-app-1 .smaller}
+
+- Six cities chosen to represent the four census regions.
+  - Dayton, Ohio
+  - Seattle, Washington
+  - Fitchburg, Massachusetts
+  - Franklin County, Massachusetts
+  - Charleston, South Carolina
+  - Georgetown County, South Carolina
+- To represent
+    - City Sizes to capture medical delivery system complexities
+    - Waiting times to appointment and physician per capita ratios to test sensitivity of demand elasticities to nonprice rationing
+    - Geographical Diversity: urban and rural sites in the North and the South
+
+[
+  [$\blacktriangleright$ Back](#sec-expected-medical-expense)
+]{.footer}
+
+## Nonparametric Correction in the Error Terms {#sec-error}
+
+- Results show a mean value for each plan
+  - [mean within plans over predicted values obtained by alternatively placing participants on each plan]{.small}
+- Clustered Standard Errors by family and over time
+
+
+## Comparison with Selection Models {#sec-selection-models}
+
+- **Types:**
+  1. Tobit model.
+  2. Adjusted Tobit model.
+  3. Sample selection models.
+- **Characteristics:**
+  - Model correlation between probability of any use and level of use explicitly.
+  - the four-equation model is not nested within selection models.
+- **Comparison:**
+  - Four-equation model demonstrated less bias and statistical indistinguishability in empirical validation.
+
+[
+  [$\blacktriangleright$ Back](#sec-expected-medical-expense)
+]{.footer}
+
+## Use by Subgroups {.smaller .nonincremental}
+
+- Income: 
+  - The probability of any use of medical services increases with income within each plan, but these estimates are influenced by the income-related upper limit in out-of-pocket expenses
+  - A cleaner test —the individual deductible plan because its deductible is not related to income— shows the differences in medical expenses due to income are not significant
+
+- Age groups: 
+  - Similar outpatient response to insurance plans for children (age &le; 18) and adults.
+  - Children less plan-responsive for inpatient care.
+
+## Other Subgroups {.smaller .nonincremental}
+
+*Health Status*: No differential response to health insurance coverage observed between healthy and sickly individuals.
+Lack of interaction between plan and health status suggests sickly individuals exhibit more discretion at the margin.
+
+*Sites*: No differences in response to insurance coverage among sites.
+
+*Period of Enrollment*: Duration of enrollment does not significantly impact spending or plan responsiveness.
+
+## Other Results {.smaller .nonincremental}
+
+*Dental Results*: Dental services show greater responsiveness to plan in the first year.
+Similar magnitude of responsiveness as other medical services in subsequent years.
+
+*Health Maintenance Organization (HMO) Results*: A randomized group of participants was assigned into an HMO, the Group Health Cooperative of Puget Soung in Seattle. The HMO Experimentals. This group was given a plan of benefits identical to the free-for-service (FFS) plan. 
+No evidence of selection observed in the HMO studied.
+HMO Experimentals exhibit lower inpatient use and lower expenditures compared to free fee-for-service plan.
+Health status outcomes comparable between HMO and free fee-for-service plan.
