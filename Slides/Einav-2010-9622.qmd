@@ -1,0 +1,319 @@
+---
+title: "Estimating Welfare in Insurance Markets"
+subtitle: "using variation in prices"
+author: "Einav, Finkelstein, and Cullen (QJE, 2010)"
+institute: ""
+date: last-modified
+date-format: long
+format:
+  revealjs: 
+    slide-number: true
+    # chalkboard: 
+    #   buttons: false
+    preview-links: true
+    incremental: true
+    theme: [simple, theme.scss ]
+    width: 1260
+    height: 700
+    embed-resources: true
+    navigation-mode: linear
+    # revealjs-plugins:
+    #   - fullscreen
+    # include-in-header: packages.tex
+    # css: [style.css, xaringan-themer.css]
+    # logo: images/quarto.png
+    # footer: <https://quarto.org>
+# resources:
+#   - Paper/WP-LCFI.pdf
+# bibliography: biblio/lcfi.bib
+
+---
+## Overview
+
+- **Objective:** Quantify the welfare loss in insurance markets with (adverse or advantageous) selection due to inefficient pricing.
+- **Key Findings:** 
+  - Evidence of adverse selection in employer-provided health insurance.
+  - Quantitative welfare loss of inefficient pricing is small.
+- **Methodology:** 
+  - Use of price variation to identify and estimate demand and insurers' costs.
+
+## Overview
+
+- **Contribution:** 
+  - Show how to use standard consumer and producer theory to empirically estimate welfare losses in markets with selection.
+  - According to authors: Fewer assumptions about consumers' preferences, straightforward implementation, and general
+
+## Introduction
+
+- Complementary approach to empirical welfare analysis requiring fewer assumptions
+  - Revealed preference, demand and cost curves are sufficient statistics for welfare analysis
+- Fewer assumptions at the cost of limiting welfare analysis to only observed (existing) contracts
+  - Distortion of offered contracts set not allowed
+
+## Introduction
+
+- In Graphical analysis, the authors show that the slope of the cost curve provides a direct test of selection
+  - Constant (horizontal) marginal cost curve, no selection; negative, adverse selection; positive, advantageous selection
+
+## Introduction
+
+- Employer-provided health insurance
+- Individual-level data from Alcoa, Inc., large multinational aluminum producer
+  - Health insurance options, choices, and medical insurance claims
+  - Price variation used in identification arises due to Alcoa's organizational structure, (orthogonal to employee characteristics)
+- Authors detect adverse selection and estimate the welfare loss to be small (<$10 per employee, 3% of efficient total surplus)
+
+## Theoretical Framework
+
+- Individuals choose from two insurance contracts, $H$ high (insurance) and $L$ low coverage (no insurance).
+- Characteristics of insurance contracts are taken as given, but price is determined endogenously
+- Population defined by a distribution $G(\zeta)$, $\zeta$ vector of consumer characteristics
+- Relative price of contract H by $p$
+
+## Theoretical Framework
+
+- $v^H(\zeta_i,p)$ and $v^L(\zeta_i)$ denote the consumer $i's$ utility from buying contracts $H$ and $L$, respectively
+  - $v^H(\zeta_i,p)$ strictly decreasing in $p$ and $v^H(\zeta_i,p=0)>v^H(\zeta_i)$
+- Expected monetary cost of providing insurance to individual $i$, $c(\zeta_i)$
+
+## Demand for Insurance
+
+- Each individual makes a discrete choice, buying insurance or not
+  - [Demand is only a function of price (abstracting from coverage level)]{.small}
+  - [Firms cannot offer different prices to different individuals [(empirical application: exogenous price variation)]{.small}]{.small}
+  - [Individuals buy at the lowest price available, demand can be sufficiently characterized as a function of the lowest price $p$]{.small}
+- Individual $i$ buys insurance if and only if $v^H(\zeta_i,p)>v^L(\zeta_i)$
+- Willingness to pay $\pi(\zeta_i)\equiv\max\{p:v^H(\zeta_i,p)>v^L(\zeta_i) \}$
+
+## Demand for Insurance
+
+- Aggregate demand is
+  $$
+    D(p)=\int \mathbb{1}(\pi(\zeta)\ge p)dG(\zeta)=\text{Pr}(\pi(\zeta)\ge p)
+  $$ {#eq-demand}
+
+## Supply
+
+- $N\ge2$ insurance providers set prices à la Bertrand (perfect competition) [Under perfect competition, any inefficiency is attributed to selection]{.small}
+- The cost of providing contract $H$ to individual $i$ are the insurable cost $c(\zeta_i)$ [No other admin or production costs]{.small}
+
+## Supply
+
+- The average (expected) cost curve
+  $$
+    \text{AC}(p)=\frac{1}{D(p)}\int c(\zeta)\mathbb{1}(\pi(\zeta)\ge p)dG(\zeta)=\mathbb{E}[c(\zeta)| \pi(\zeta)\ge p]
+  $$ {#eq-ac}
+
+- The marginal (expected) cost curve is
+  $$
+    \text{MC}(p)=\mathbb{E}[c(\zeta)|\pi(\zeta)=p]
+  $$ {#eq-mc}
+
+## Equilibrium
+
+- It is profitable to provide insurance
+- Single crossing between MC$(p)$ and the demand curve
+- The equilibrium
+  $$
+    p^*=min\{p:p=\text{AC}(p)\}
+  $$
+
+## Measuring Welfare
+
+- Authors measure consumer surplus by the certainty equivalent
+  - The certainty equivalent of an uncertain outcome is the amount that would make an individual indifferent between obtaining this amount for sure and obtaining the uncertain outcome
+- Income effects are ignored (equivalent to assuming CARA utility function)
+- $e^H(\zeta_i)$ and $e^L(\zeta_i)$ denote the certainty equivalent for consumer $i$ of an allocation of contract $H$ and $L$, respectively
+- The willingness to pay $\pi(\zeta_i)=e^H(\zeta_i)-e^L(\zeta_i)>0$
+
+## Measuring Welfare
+
+- Consumer welfare
+  $$
+    \text{CS}=\int[(e^H(\zeta)-p)\mathbb{1}(\pi(\zeta)\ge p)+e^L(\zeta)\mathbb{1}(\pi(\zeta)<p)]dG(\zeta)
+  $$
+- Producer welfare
+  $$
+    \text{PS}=\int(p-c(\zeta))\mathbb{1}(\pi(\zeta)\ge p)dG(\zeta)
+  $$
+
+## Measuring Welfare
+
+- Total welfare
+  $$
+    \text{TS=CS+PS}=\int[(e^H(\zeta)-c(\zeta))\mathbb{1}(\pi(\zeta)\ge p)+e^L(\zeta)\mathbb{1}(\pi(\zeta)<p)]dG(\zeta)
+  $$
+
+## Graphical Representation
+
+
+- Adverse selection: Individuals with the highest willingness to pay for insurance are those who, on average, have the highest expected costs
+  - Downward-sloping MC: MC is decreasing in quantity
+  - [As the price falls, the marginal individuals who select contract $H$ have a lower expected cost than inframarginal individuals, leading to lower average costs]{.small}
+  - Uniform pricing [(firms cannot discriminate individuals based on their privately known marginal costs)]{.small} implies average-cost pricing in equilibrium
+  - AC > MC leads to underinsurance in adverse selection
+
+## 
+
+![Adverse selection implies the marginal cost curve is downward-
+sloping, people with the highest willingness to pay also have the highest expected cost to the insurer. Competitive equilibrium is given by point C (demand =average cost), whereas the efﬁcient allocation is E (demand = marginal cost). The (shaded) triangle CDE represents the welfare cost from underinsurance.](figures/adverse-selection.png){fig-align="center"}
+
+## Advantageous Selection
+
+- Individuals with the highest willingness to pay insurance have, on average, the lowest expected costs. 
+  - MC and AC curves are upward-sloping
+  - Leading to over-insurance
+  - Intuitively, insurance providers have an additional incentive to reduce price, as the inframarginal customers whom they acquire as a result are relatively good risks.
+
+## 
+
+![Advantageous selection implies the marginal cost curve is upward-
+sloping, people with the highest willingness to pay also have the lowest expected cost to the insurer. Competitive equilibrium is given by point C (demand =average cost), whereas the efﬁcient allocation is E (demand = marginal cost). The (shaded) triangle CDE represents the welfare cost from overinsurance.](figures/advantageous-selection.png){fig-align="center"}
+
+## Sufficient Statistics
+
+- Graphical analyses illustrate that the demand and cost curves are sufficient statistics for welfare analysis of equilibrium and nonequilibrium pricing of existing contracts
+  - Different underlying primitives have the same welfare implications if they generate the same demand and cost curves
+  - Primitives: preferences and private information summarized by $\zeta$
+
+## Sufficient Statistics
+
+- This suggests an empirical approach to remain agnostic about the underlying primitives: estimating demand and cost curves
+  - Requiring: Revealed preferences choices from individuals can be used for welfare analysis
+  - Limits counterfactuals to only price variation for the set of observed insurance contracts
+  - Examples: Mandatory insurance coverage, taxes and subsidies for insurance, regulation eliminating an existing contract, etc.
+
+## Estimation
+
+- The framework requires data allowing the estimation of the demand curve $D(p)$ and the average cost curve $AC(p)$
+- Marginal cost curve can be derived by
+  $$
+  \begin{aligned}
+    MC(p)
+    &=\frac{\partial TC(p)}{\partial D(p)}=\frac{\partial(AC(p)\cdot D(p))}{\partial D(p)}\\
+    &=\left(\frac{\partial D(p)}{\partial p}\right)^{-1}\frac{\partial(AC(p)\cdot D(p))}{\partial p}
+  \end{aligned}
+  $$
+
+## Identification
+
+- To identify demand, price variation exogenous to unobservable demand characteristics is needed
+- Authors claim they do not need an additional source of variation to estimate the average cost curve AC(p) because
+  - Expected costs are likely to affect demand, any exogenous price variation to demand is also exogenous to insurable cost
+
+## Employer-Provided Health Insurance {.smaller}
+
+- Individual level data from 2004 on the U.S.-based employees and their dependants at Alcoa, Inc.
+- In 2004, Alcoa had ~45,000 employees in the U.S. working in 300 different job sites in 39 different states.
+- Alcoa introduced a new set of health insurance options for virtually all its salaried employees and about half of its hourly employees
+- Data includes the menu of health options available, employee premium of each option, employee's coverage choice, and detailed claim-level information on all the employee medical expenditures including covered dependants
+- Data also includes demographic information, such as age, race, gender, annual earnings, and job tenure
+
+## Subsample
+
+- Analysis restricted to a subsample of employees for whom the **pricing variation is cleaner**
+- 3,779 salaried employees who chose one of the two modal health insurance choices: a higher and a lower level of PPO coverage
+
+## Price Variation
+
+- In 2004, as part of the new benefit design, company headquarters offered a set of seven different possible pricing menus for employee benefits.
+- The coverage options are the same across all the menus, but the prices (employee premiums) associated with these options vary
+  - The object of interest is the incremental (annual) premium for contract $H$ relative to $L$, $p=p_H-p_L$
+  - There were six different values of $p$ in 2004, from \$384 to \$659
+
+## Price Variation by Business Unit
+
+- The president of each business unit determined the price menu for the employees of their respective business unit
+- Alcoa had forty business units. Each unit has essentially complete independence to run its business
+- Business units are typically organized by functionality and are independent of geography (there are often multiple business units in the same state)
+
+## Price Variation by Business Unit
+
+- The median business unit has about 500 employees
+- The business unit president may choose different price menus for employees within his unit based on their location and employment type (salaried/hourly, hourly by union)
+- As a result, employees doing the same job in the same location may face different prices for their health insurance benefits due to their business affiliations
+
+## Price Variation
+
+![](figures/table-1-p-var.png){fig-align="center" width="70%"}
+
+## Price Variation Analysis
+
+- Authors claim that they could not reject the null that all the coefficients are jointly uncorrelated; F-test p-value=0.14
+- Business unit presidents were opposed to charging employees much for health insurance coverage 
+- After 2004, Alcoa no longer gave business unit presidents a choice on benefit prices and adopted a uniform pricing structure
+- A similar analysis for hourly workers reveals statistically significant differences across employees who face different prices
+
+## Price Variation Analysis
+
+![](figures/table-2-p-var.png){fig-align="center" width="70%"}
+
+## Empirical Strategy
+
+- $p_i=p_i^H-p_i^L$, relative price employee $i$ faces
+- $D_i$ is equal to 1 if employee $i$ chooses contract $H$, and O if $L$
+- $m_i$ total medical expenditure of employee $i$ and covered family members
+- $c_i=c(m_i;H)-c(m_i;L)$ is the incremental cost to the insurer from providing contract H relative to L, holding $m_i$ fixed.
+  - $c(m_i;H)$ and $c(m_i;L)$ denote the cost to the insurance company from medical expenditures under H and L
+  - $c(m_i;H)$ is observed; $c(m_I;L)$ is computed counterfactually using the claims data and the plan L rules
+
+## Estimating Equations
+
+$$
+\begin{aligned}
+  D_i&=\alpha+\beta p_i + \epsilon_i \\
+  c_i&=\gamma+\delta p_i + u_i
+\end{aligned}
+$$ {#eq-estimating}
+
+## MC and Equilibrium P and Q
+
+Having estimated the demand and AC, we can find MC, 
+
+$$
+MC(p)=\frac{\alpha\delta}{\beta}+\gamma+2\delta p
+$$
+
+With MC, we can find the equilibrium and the efficient price and quantity; Equilibrium AC(p)=p, Efficient MC(p)=p
+$$
+\begin{aligned}
+  P_{eq} &=\gamma/(1-\delta)\\
+  Q_{eq} &=\alpha + \beta(\gamma/(1-\delta))\\
+\end{aligned}
+$$
+
+## Efficient P and Q
+
+Efficient MC(p)=p
+$$
+\begin{aligned}
+  P_{eff} &=\frac{1}{(1-2\delta)(\frac{\alpha\delta}{\beta}+\gamma)}\\
+  Q_{eff} &=\alpha+\frac{1}{(1-2\delta)(\alpha\delta+\beta\gamma)}
+\end{aligned}
+$$
+
+Welfare Loss
+$$
+  \Delta_{CDE}=-\frac{\delta^2}{2(1-2\delta)\beta}\left(\alpha+\frac{\beta\gamma}{1-\delta}\right)^2
+$$
+
+## Results
+
+![](figures/table-3-results.png){fig-align="center"}
+
+## Results
+
+![](figures/fig-5-results.png){fig-align="center"}
+
+## Results
+
+- Downward sloping demand $\beta=-0.0007$
+  - a \$100 increase in price reduces the probablity of getting $H$ by 11\%
+- Cost curve slope indicates the existence of adverse selection $\delta=0.155$
+  - The average cost of individuals who purchased contract $H$ is higher when the price is higher
+  - The average cost curve is therefore downward-sloping in quantity
+
+## Results
+
+- Welfare cost of adverse selection \$9.55 per employee per year
+- Adverse selection increases price by almost \$200 and reduces the share of H by 14 p.p.

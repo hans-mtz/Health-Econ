@@ -1,0 +1,8 @@
+# Research Ideas
+
+1. Physician Supply in Canada. Shortage of physicians. Potentially large number of qualified immigrants already in Canada can't help because of licensing. Licensing is costly in terms of income and time. However, licensing is needed to eliminate information asymmetry. The employers do not know how good immigrant physicians are relative to natives. In addition, for hiring immigrants from outside Canada, firms need an LMIA. Among other things, firms need to pay immigrants the market average wage (uniform pricing). What are the welfare losses due to the physician shortage? Non-linear pricing might help design a policy to help physicians self-select.
+
+2. Demand of Health Services. Are inpatient and outpatient services complements? Use recently developed empirical techniques to estimate. Allen and Rebheck (2020). 
+
+3. Health as an input to produce income. Health services are demanded when sufficiently negative shocks are realized, which reduces our capacity to produce income.
+
