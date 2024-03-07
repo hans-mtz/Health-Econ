@@ -1,0 +1,62 @@
+---
+title: "Inpatient and Outpatient services: Complements or Substitutes"
+author: Hans Martinez
+institute: ""
+date: last-modified
+date-format: long
+format:
+  revealjs: 
+    slide-number: true
+    # chalkboard: 
+    #   buttons: false
+    preview-links: true
+    incremental: true
+    theme: [simple, theme.scss ]
+    width: 1260
+    height: 700
+    embed-resources: true
+    navigation-mode: linear
+    # revealjs-plugins:
+    #   - fullscreen
+    # include-in-header: packages.tex
+    # css: [style.css, xaringan-themer.css]
+    # logo: images/quarto.png
+    # footer: <https://quarto.org>
+# resources:
+#   - Paper/WP-LCFI.pdf
+bibliography: health-demand.bib
+
+---
+## Introduction
+
+- What's the question? Are inpatient and outpatient medical services complements or substitutes?
+- Why does it matter? Policy implications. If substitutes, we would like to incentivize utilization of less expensive outpatient services. If complements, protect consumers and ensure better insurance pricing.
+- How will I answer it? New method, old question. Use recently developed methods allowing for complementarity/substitutability of goods [@Gentzkow2007; @Ershov2018; @Allen2019]
+
+## Lit Rev
+
+- A quick review of the literature shows only a handful of papers looking into complementarity/substitutability in the health demand of outpatient and inpatient services [@Wang2022; @Kato2017; @Zhou2011]
+- Methodologically they are very simple
+- Recent developments have improved significantly how to empirically learn better about complementarity [@Gentzkow2007; @Ershov2018; @Allen2019]
+
+## Model
+
+- Discrete Choice Model allowing for unobservable heterogeneity over whether the goods are substitutes or complements
+  $$
+  \begin{aligned}
+    u_0 &= 0 \\
+    u_A &= \delta_A + \alpha p_A+\nu_A \\
+    u_B &= \delta_B + \alpha p_B +\nu_B\\
+    u_{AB}&= u_A+u_B+\Gamma
+  \end{aligned}
+  $$
+
+- Where $u_j$ utility; $p_j$ prices, $\delta_j$ mean utilities, $\nu_j$ unobservable variation in utility, and $\Gamma$ captures whether goods A and B are complements or substitutes.
+
+
+## Empirical Approach
+
+- Data: RAND Health Insurance Experiment
+- Simulation techniques (MCMC; ELVIS)
+
+## References
