@@ -4,4 +4,4 @@
 
 [Einav-2010](https://raw.githack.com/hans-mtz/Health-Econ/main/Slides/Einav-2010-9622.html)
 
-[Research Proposal](https://raw.githack.com/hans-mtz/Health-Econ/main/Slides/research-proposal.html)
+[Research Proposal](https://raw.githack.com/hans-mtz/Health-Econ/main/Slides/research_proposal.html)
